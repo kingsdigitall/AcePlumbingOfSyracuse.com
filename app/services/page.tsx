@@ -26,9 +26,9 @@ const page = () => {
 
       {/* Content 1 */}
       <div className="">
-        <div className=" mt-6 text-center text-4xl text-minor">
+        {/* <div className=" mt-6 text-center text-4xl text-minor">
           {contentData?.serviceTitle}
-        </div>
+        </div> */}
         {/* <Affordable /> */}
         <Service />
 

@@ -31,7 +31,6 @@ const page = () => {
         </div> */}
         {/* <Affordable /> */}
         <Service />
-
         {/* <TypeOfDumpster /> */}
       </div>
       {/* Content 1 */}

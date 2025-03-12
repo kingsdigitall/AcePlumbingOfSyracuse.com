@@ -39,19 +39,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${contentData.baseUrl}services`,
+      url: `${contentData.baseUrl}services/`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${contentData.baseUrl}about`,
+      url: `${contentData.baseUrl}about/`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: `${contentData.baseUrl}contact`,
+      url: `${contentData.baseUrl}contact/`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,

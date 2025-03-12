@@ -4,6 +4,8 @@ import Service from "@/app/components/Home/Service";
 import contentData from "@/components/Content/servicePage.json";
 import { Metadata } from "next";
 import TypeOfDumpster from "../components/Widgets/TypeOfDumpster";
+import ContactInfo from "@/components/Content/ContactInfo.json";
+
 
 export const metadata: Metadata = {
   title: {
@@ -11,7 +13,7 @@ export const metadata: Metadata = {
   },
   description: contentData.metaDescription,
   alternates: {
-    canonical: contentData.metaCanonical,
+    canonical: `${ContactInfo.baseUrl}services/`,
   },
 };
 const page = () => {

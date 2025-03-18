@@ -4,7 +4,7 @@ const ProcessWidget = () => {
   return (
     <div className="mt-16 px-4 md:px-32">
       <h2 className="text-center text-3xl font-extrabold text-main">
-      Drain Cleaning Services in – 3 Easy Steps!
+      Drain Cleaning Services in Syracuse – 3 Easy Steps!
       </h2>
       <p className="mt-4 text-center text-lg">
       Getting your drains cleaned with Syracuse Drain Cleaning Pros is simple, fast, and hassle-free. Here’s how it works:

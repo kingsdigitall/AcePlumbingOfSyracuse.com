@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
   description: contentData.metaDescription,
   alternates: {
-    canonical: contentData.metaCanonical,
+    canonical: `${ContactInfo.baseUrl}contact/`,
   },
 };
 

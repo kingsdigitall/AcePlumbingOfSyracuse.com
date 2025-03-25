@@ -6,6 +6,7 @@ import { FaPhoneVolume } from "react-icons/fa6";
 import Banner from "../components/Home/Banner";
 import contentData from "@/components/Content/contact.json";
 import ContactInfo from "@/components/Content/ContactInfo.json";
+
 export const metadata: Metadata = {
   title: {
     absolute: contentData.metaTitle,
@@ -28,7 +29,6 @@ const page = () => {
           p1={contentData.metaDescription}
         />
         {/* Poster */}
-
         {/* Content1 */}
         <div className="flex items-center justify-center">
           <div className="mt-10 px-4 md:px-20">
@@ -105,7 +105,6 @@ const page = () => {
           </div>
         </div>
         {/* Content 2 */}
-
         {/* Call to Action */}
         <div className="group mx-4 mt-16 flex w-11/12 flex-col items-center justify-center gap-6 px-10 md:mx-0 md:mb-4 md:flex-row md:space-x-2 xl:w-full">
           <Image

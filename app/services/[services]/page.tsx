@@ -6,7 +6,6 @@ import Service from "@/app/components/Home/Service";
 import { headers } from "next/headers";
 import content from "@/components/Content/subDomainUrlContent.json";
 import ContactInfo from "@/components/Content/ContactInfo.json";
-import { Item } from "@radix-ui/react-accordion";
 import CtaSimple from "@/app/components/CtaSimple";
 
 export function generateMetadata({ params }: { params: { services: string } }) {

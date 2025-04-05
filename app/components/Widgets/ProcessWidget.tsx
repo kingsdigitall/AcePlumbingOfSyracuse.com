@@ -15,7 +15,7 @@ const ProcessWidget = () => {
 
       {/* Step 1 */}
       <div className="relative flex flex-col items-center rounded-md bg-white p-4 text-center shadow-lg">
-      <div className="mb-4 text-xl font-bold">Step 1: Schedule an Appointment</div>
+      <h3 className="mb-4 text-xl font-bold">Step 1: Schedule an Appointment</h3>
       <p>
       Contact us to schedule a convenient time for our team to visit and assess your drain cleaning needs.
       </p>
@@ -23,7 +23,7 @@ const ProcessWidget = () => {
 
       {/* Step 2 */}
       <div className="relative flex flex-col items-center rounded-md bg-white p-4 text-center shadow-lg">
-      <div className="mb-4 text-xl font-bold">Step 2: Get Transparent Pricing</div>
+      <h3 className="mb-4 text-xl font-bold">Step 2: Get Transparent Pricing</h3>
       <p>
       No surprises, no hidden fees—just clear, competitive pricing for your drain cleaning service.
       </p>
@@ -31,7 +31,7 @@ const ProcessWidget = () => {
 
       {/* Step 3 */}
       <div className="relative flex flex-col items-center rounded-md bg-white p-4 text-center shadow-lg">
-      <div className="mb-4 text-xl font-bold">Step 3: Fast & Efficient Service</div>
+      <h3 className="mb-4 text-xl font-bold">Step 3: Fast & Efficient Service</h3>
       <p>
       Our team arrives on time, performs the cleaning efficiently, and ensures your drains are flowing smoothly.
       </p>

@@ -5,5 +5,10 @@
     "baseUrl":"https://aceplumbingofsyracuse.com/",
     "host":"aceplumbingofsyracuse.com",
     "name":"Syracuse Drain Cleaning Pros",
-    "address": " 411 North Ave Syracuse, NY 13206, United States"
+    "address": " 411 North Ave Syracuse, NY 13206, United States",
+    "service": "Drain Cleaning Services",
+    "location": "Syracuse, NY",
+    "zipCode": "13206",
+    "bannerImage": "https://ik.imagekit.io/serviceproviders/aceplumbingofsyracuse.com/banner.jpg?updatedAt=1743766063015",
+    "logo": "https://ik.imagekit.io/serviceproviders/aceplumbingofsyracuse.com/logo.png?updatedAt=1743766046053"
 }

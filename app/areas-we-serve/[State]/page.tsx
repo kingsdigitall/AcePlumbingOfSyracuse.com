@@ -1,29 +1,15 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import content from "@/components/Content/subDomainUrlContent.json";
-import Link from "next/link";
 import Banner from "@/app/components/Home/Banner";
 import Service from "@/app/components/Home/Service";
 import ContactInfo from "@/components/Content/ContactInfo.json";
-import { Metadata } from "next";
-import ReviewSlider from "@/app/components/ReviewSlider";
-import { FaPhoneSquareAlt } from "react-icons/fa";
-import CtaState from "@/app/components/CtaState";
-import ServiceSlider from "@/app/components/Home/ServiceSlider";
-import CtaWidget from "@/app/components/CtaWidget";
-import ZipAndNeighAccordian from "@/app/components/Home/ZipAndNeighAccordian";
 import Faq from "@/app/components/Home/Faq";
-import CounterCta from "@/app/components/Widgets/CounterCta";
 import HourCta from "@/app/components/Home/HourCta";
-import Guarantees from "@/app/components/Widgets/Guarantees";
 import ReviewWidget from "@/app/components/Widgets/ReviewWidget";
-import data from "@/components/Content/serviceWidgetContent.json";
-import Types from "@/app/components/Widgets/Types";
 import Affordable from "@/app/components/Home/Affordable";
 import ProcessWidget from "@/app/components/Widgets/ProcessWidget";
 import AreaWeServe from "@/app/components/Widgets/AreaWeServe";
-import NavbarState from "@/app/components/State/NavbarState";
-// import Service from "@/app/Components/Service";
 
 interface SubdomainPageProps {
   params: { State: string };
@@ -35,9 +21,9 @@ export function generateMetadata({ params }: SubdomainPageProps) {
   const ContentData = cityData[State];
   return {
     title: ContentData?.metaTitle,
-    description: ContentData?.metaDescription,
+    description: `${ContentData?.metaDescription.replace("Call us today!",`Call us at ${ContactInfo.No}`)}.`,
     alternates: {
-      canonical: `https://${ContactInfo.host}/area-we-serve/${State}/`,
+      canonical: `https://${ContactInfo.host}/areas-we-serve/${State}/`,
     },
   };
 }
@@ -73,13 +59,84 @@ export default function SubdomainPage({ params }: SubdomainPageProps) {
     .filter((key) => key !== State)
     .map((key) => cityData[key]);
   // console.log(ContentData)
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: `${ContactInfo.name}`,
+    image:
+      `${ContactInfo.logo}` || "",
+    "@id": `${ContactInfo.baseUrl}`,
+    url: `${ContactInfo.baseUrl}`,
+    telephone: `${ContactInfo.No}`,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: ContactInfo.address.split(",")[0].trim(),
+      addressLocality: ContactInfo.location.split(",")[0].trim(),
+      addressRegion: ContactInfo.location.split(",")[1].trim(),
+      postalCode: ContactInfo.zipCode.trim(),
+      addressCountry: "United States",
+    },
+    areaServed: {
+      "@type": "Place",
+      name: `${ContentData?.name}`,
+      address: {
+        "@type": "PostalAddress",
+        postalCode: `${ContentData?.zipCodes.split("|")[0]}`,
+        addressRegion: `${State.split("-").pop()?.toUpperCase()}`,
+        addressCountry: "United States",
+      },
+    },
+    priceRange: "$$",
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ],
+        opens: "10:30",
+        closes: "12:32",
+      },
+    ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: 4,
+      reviewCount: 79,
+    },
+    potentialAction: {
+      "@type": "ReserveAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: "#book_now",
+        inLanguage: "en-US",
+        actionPlatform: [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform",
+        ],
+      },
+      result: {
+        "@type": "Reservation",
+        name: `https://${ContactInfo.host}#Appointment`,
+      },
+    },
+  };
   return (
     <div className="mx-auto max-w-[2100px] overflow-hidden">
+      <section>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </section>
       <Banner
         h1={`${ContentData.h1Banner} ${ContentData.zipCodes && ContentData.zipCodes.split("|")[0]}`}
         image={ContentData.bannerImage}
         header={ContentData.bannerQuote}
-        p1={ContentData.metaDescription}
+        p1={`${ContentData?.metaDescription.replace("Call us today!",`Call us at ${ContactInfo.No}`)}.`}
       />
       {/* Section 1 */}
       {/* <p>{subDomain.map((item:any)=>(
@@ -90,9 +147,9 @@ export default function SubdomainPage({ params }: SubdomainPageProps) {
           <Image
             height={1000}
             width={1000}
-            src={`/${ContentData?.h2Image}`}
+            src={`${ContentData?.h2Image}`}
             className="h-full w-full  rounded-lg object-cover shadow-lg"
-            alt={ContentData?.h2Image.split(".")[0]}
+            alt={ContentData?.h2Image.split("/").pop()?.split(".")[0] || "image"}
           />
         </div>
           <div className=" flex w-full flex-col gap-3 ">
@@ -164,9 +221,9 @@ export default function SubdomainPage({ params }: SubdomainPageProps) {
                     className=" 1 rounded-md border p-4 shadow-md "
                     key={index}
                   >
-                    <div className="1 text-center text-xl font-bold text-minor">
+                    <h3 className="1 text-center text-xl font-bold text-minor">
                       {item.title}
-                    </div>
+                    </h3>
                     <div className="mt-4 text-lg">{item.description}</div>
                   </div>
                 );

@@ -20,11 +20,11 @@ const Navbar = () => {
             <div className="flex">
               <Link href={ContactInfo?.baseUrl} aria-label="Home">
                 <Image
-                  src="/logo.png"
+                  src={ContactInfo?.logo}
+                  priority={true}
                   className=" md:mr-3 w-40 md:w-32 h-full object-contain"
                   alt="logo of the company"
                   title=""
-                  loading="lazy"
                   width={1000}
                   height={1000}
                 />

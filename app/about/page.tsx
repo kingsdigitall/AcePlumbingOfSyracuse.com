@@ -4,7 +4,6 @@ import React from "react";
 import Banner from "@/app/components/Home/Banner";
 import contentData from "@/components/Content/about.json";
 import ContactInfo from "@/components/Content/ContactInfo.json";
-import Navbar from "../components/Navbar";
 
 export const metadata: Metadata = {
   title: {
@@ -47,9 +46,9 @@ const page = () => {
             </div>
             <div className="w-full pt-10">
               <Image
-                src={`/${contentData.h2Image}`}
+                src={`${contentData.h2Image}`}
                 className="rounded-lg border object-cover  shadow-lg "
-                alt={contentData.h2Image.split(".")[0]}
+                alt={contentData.h2Image.split("/").pop()?.split(".")[0] || "image"}
                 width={1000}
                 height={1000}
               />

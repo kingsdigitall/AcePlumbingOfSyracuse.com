@@ -6,6 +6,7 @@ import { FaPhoneVolume } from "react-icons/fa6";
 import Banner from "../components/Home/Banner";
 import contentData from "@/components/Content/contact.json";
 import ContactInfo from "@/components/Content/ContactInfo.json";
+
 export const metadata: Metadata = {
   title: {
     absolute: contentData.metaTitle,
@@ -28,16 +29,15 @@ const page = () => {
           p1={contentData.metaDescription}
         />
         {/* Poster */}
-
         {/* Content1 */}
         <div className="flex items-center justify-center">
           <div className="mt-10 px-4 md:px-20">
             <div className="mt-10 gap-6 md:flex">
               <Image
-                src={`/${contentData.h2Image}`}
+                src={`${contentData.h2Image}`}
                 width={500}
                 height={400}
-                alt={contentData.h2Image.split(".")[0]}
+                alt={contentData.h2Image.split("/").pop()?.split(".")[0] || "image"}
                 className="object-cover"
               />
               <div className="flex flex-col items-center justify-center">
@@ -96,22 +96,21 @@ const page = () => {
           </div>
           <div>
             <Image
-              src={`/${contentData.h3Image}`}
+              src={`${contentData.h3Image}`}
               className="h-[350px] w-full rounded-lg border object-cover shadow-lg"
-              alt={contentData.h3Image.split(".")[0]}
+              alt={contentData.h3Image.split("/").pop()?.split(".")[0] || "image"}
               width={1000}
               height={500}
             />
           </div>
         </div>
         {/* Content 2 */}
-
         {/* Call to Action */}
         <div className="group mx-4 mt-16 flex w-11/12 flex-col items-center justify-center gap-6 px-10 md:mx-0 md:mb-4 md:flex-row md:space-x-2 xl:w-full">
           <Image
             aria-hidden="true"
-            src="/img1.png"
-            alt="Calling icon Star dryer vent"
+            src="https://ik.imagekit.io/serviceproviders/aceplumbingofsyracuse.com/img1.png?updatedAt=1743766065459"
+            alt="Calling icon"
             width={200}
             height={200}
             className="duration-300 ease-in group-hover:-translate-y-4"

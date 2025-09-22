@@ -16,7 +16,7 @@ const Footer = () => {
                 src={ContactInfo?.logo}
                 height={10000}
                 width={10000}
-                className="w-full object-cover  "
+                className="w-full object-cover"
                 alt={contentData.logo.split(".")[0]}
                 title={contentData.logo.split(".")[0]}
               />

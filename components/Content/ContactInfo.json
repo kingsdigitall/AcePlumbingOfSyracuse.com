@@ -1,14 +1,18 @@
 {
     "No": "(315) 204-1908",
     "tel": "3152041908",
-    "mail":"daniel@aceplumbingofsyracuse.com",
-    "baseUrl":"https://aceplumbingofsyracuse.com/",
-    "host":"aceplumbingofsyracuse.com",
-    "name":"Syracuse Drain Cleaning Pros",
+    "mail": "daniel@aceplumbingofsyracuse.com",
+    "baseUrl": "https://aceplumbingofsyracuse.com/",
+    "host": "aceplumbingofsyracuse.com",
+    "name": "Syracuse Drain Cleaning Pros",
     "address": " 411 North Ave Syracuse, NY 13206, United States",
     "service": "Drain Cleaning Services",
     "location": "Syracuse, NY",
     "zipCode": "13206",
     "bannerImage": "https://ik.imagekit.io/serviceproviders/aceplumbingofsyracuse.com/banner.jpg?updatedAt=1743766063015",
-    "logo": "https://ik.imagekit.io/serviceproviders/aceplumbingofsyracuse.com/logo.png?updatedAt=1743766046053"
+    "logoImage": "https://ik.imagekit.io/serviceproviders/aceplumbingofsyracuse.com/logo.png?updatedAt=1743766046053",
+    "favicon": "",
+    "googleAnalytics": "",
+    "minor": "#9e2695",
+    "main": "#5E18EA"
 }

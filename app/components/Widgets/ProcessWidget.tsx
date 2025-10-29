@@ -1,42 +1,57 @@
 import React from "react";
+import contactContent from "@/app/Data/content";
+
+const home: any = contactContent.homePageContent;
 
 const ProcessWidget = () => {
+  const content = home?.processWidget;
+
   return (
-    <div className="mt-16 px-4 md:px-32">
-      <h2 className="text-center text-3xl font-extrabold text-main">
-      Drain Cleaning Services in Syracuse – 3 Easy Steps!
+    <div className="mx-auto mt-20 max-w-7xl px-6 md:px-20">
+      <h2 className="text-center text-4xl font-extrabold text-main">
+        {content.title}
       </h2>
-      <p className="mt-4 text-center text-lg">
-      Getting your drains cleaned with Syracuse Drain Cleaning Pros is simple, fast, and hassle-free. Here’s how it works:
+      <p className="mx-auto mt-4 max-w-3xl  text-center text-lg">
+        {content.description}
       </p>
-      <section className="relative lg:mx-32 flex flex-col items-center justify-center gap-8 p-8">
-      {/* Vertical Progress Bar */}
-      <div className="absolute left-1/2 h-[90%] w-1 -translate-x-1/2 transform bg-gray-300 md:block"></div>
 
-      {/* Step 1 */}
-      <div className="relative flex flex-col items-center rounded-md bg-white p-4 text-center shadow-lg">
-      <h3 className="mb-4 text-xl font-bold">Step 1: Schedule an Appointment</h3>
-      <p>
-      Contact us to schedule a convenient time for our team to visit and assess your drain cleaning needs.
-      </p>
-      </div>
+      <div className="relative mt-20">
+        {/* Vertical Line */}
+        <div className="absolute left-1/2 top-0 z-0 hidden h-full w-1 -translate-x-1/2 bg-gray-300 md:block" />
 
-      {/* Step 2 */}
-      <div className="relative flex flex-col items-center rounded-md bg-white p-4 text-center shadow-lg">
-      <h3 className="mb-4 text-xl font-bold">Step 2: Get Transparent Pricing</h3>
-      <p>
-      No surprises, no hidden fees—just clear, competitive pricing for your drain cleaning service.
-      </p>
+        <div className="space-y-16">
+          {content.steps.map((step:any, index:number) => {
+            const isLeft = index % 2 === 0;
+            return (
+              <div
+                key={index}
+                className={`relative flex flex-col items-center md:flex-row md:items-start ${
+                  isLeft ? "md:justify-start" : "md:justify-end"
+                }`}
+              >
+                <div
+                  className={`z-10 md:w-1/2 ${
+                    isLeft ? "md:pr-8 md:text-right" : "md:pl-8 md:text-left"
+                  } text-left`}
+                >
+                  <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-xl">
+                    <h3 className="text-xl font-semibold text-main">
+                      {step.title}
+                    </h3>
+                    <p className="mt-3  text-sm md:text-base">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+                {/* Timeline Dot */}
+                <div className="absolute left-1/2 top-6 z-20 hidden h-6 w-6 -translate-x-1/2 items-center justify-center rounded-full bg-main font-bold text-white shadow-md md:flex">
+                  {index + 1}
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
-
-      {/* Step 3 */}
-      <div className="relative flex flex-col items-center rounded-md bg-white p-4 text-center shadow-lg">
-      <h3 className="mb-4 text-xl font-bold">Step 3: Fast & Efficient Service</h3>
-      <p>
-      Our team arrives on time, performs the cleaning efficiently, and ensures your drains are flowing smoothly.
-      </p>
-      </div>
-      </section>
     </div>
   );
 };

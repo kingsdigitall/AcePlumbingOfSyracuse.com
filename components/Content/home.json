@@ -30,7 +30,7 @@
   },
   "affordableWidget": {
     "title": "Syracuse Plumbing Experts Near You",
-    "description": "Need drain cleaning services near you? Syracuse Drain Cleaning Pros offers fast, reliable, and affordable plumbing solutions. Whether it’s for a leaky faucet, water heater installation, or major repairs, we have the expertise to handle your needs. Call now and get your plumbing issues resolved promptly!",
+    "description": "Need drain cleaning services near you? We offer fast, reliable, and affordable plumbing solutions. Whether it’s for a leaky faucet, water heater installation, or major repairs, we have the expertise to handle your needs. Call now and get your plumbing issues resolved promptly!",
     "ctaText": "Call Now",
     "cards": [
       {
@@ -85,7 +85,7 @@
   },
   "faq": [
     {
-      "FAQ": "What causes low water pressure in Syracuse?",
+      "FAQ": "What causes low water pressure?",
       "Answer": "Low water pressure in Syracuse may be caused by pipe blockages, leaks, faulty fixtures, or municipal water supply issues."
     },
     {
@@ -97,11 +97,11 @@
       "Answer": "It's recommended to schedule drain cleaning in Syracuse once a year to prevent buildup and keep your pipes flowing smoothly."
     },
     {
-      "FAQ": "How can I tell if my sewer line needs repair in Syracuse?",
+      "FAQ": "How can I tell if my sewer line needs repair?",
       "Answer": "Frequent backups, sewage smells, and multiple clogged drains can indicate sewer line issues in Syracuse. A professional inspection can confirm the problem."
     },
     {
-      "FAQ": "What should I do if my toilet keeps running in Syracuse?",
+      "FAQ": "What should I do if my toilet keeps running?",
       "Answer": "A running toilet in Syracuse may be due to a faulty flapper, fill valve, or chain. A quick repair can save water and reduce bills."
     }
   ],
